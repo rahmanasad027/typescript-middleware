@@ -3,7 +3,8 @@ import { RidersData } from "../../lib/types";
 import { apiCaller } from "../apiCaller";
 
 export function getAllRiders() {
-  apiCaller({
+  return apiCaller({
+    // <--- added return
     method: REQUEST_TYPE.GET,
     url: END_POINTS.ALL_RIDERS,
   });

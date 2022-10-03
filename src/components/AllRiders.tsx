@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { RidersData, config, BASE_URL } from "../lib/types";
 import { getAllRiders } from "../middleware/api";
 const AllRiders = () => {
-  const [apidata, setData] = useState<Array<RidersData>> ([]);
+  const [apidata, setData] = useState<Array<RidersData>>([]);
   const url = BASE_URL;
   useEffect(() => {
-    const fetchData =async () => {
+    const fetchData = async () => {
       try {
         const data = await getAllRiders();
-        const allRiders = data as <Array<RidersData>>;
-        setData(allRiders); 
-        console.log(data, "========");
+        const allRiders = data as RidersData[];
+        setData(allRiders);
+        // console.log(data, "========");
       } catch (e) {
         console.log(e);
-      } 
+      }
     };
     fetchData();
   }, []);
-  console.log(apidata, "apidata");
+  // console.log(apidata, "apidata");
 
   return (
     <div>

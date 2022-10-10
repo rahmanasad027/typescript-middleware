@@ -17,17 +17,17 @@ export const config = {
 export type RidersData = {
   id: number;
   name: string;
-  mobile_number: string;
-  profile_image: null;
-  last_alert: LastAlert;
+  mobileNumber: string;
+  profileImage: null;
+  lastAlert: LastAlert;
 };
 type LastAlert = {
   id: number;
   title: string;
-  is_seen: boolean;
+  isSeen: boolean;
   description: string;
-  created_at: string;
-  updated_at: string;
+  createdAt: string;
+  updatedAt: string;
   rider: number;
 };
 

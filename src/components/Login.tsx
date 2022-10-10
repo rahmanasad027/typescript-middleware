@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getLogin } from "../middleware/api";
 export interface ILogin {
   Login: {
     email: string;
@@ -21,7 +22,16 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
+  // const fetchData = async () => {
+  //   try {
+  //     const data = await getLogin(login);
+  //     // console.log(data, "========");
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
   const handleClick = (): void => {
+    // fetchData();
     navigate("/allRiders");
   };
 

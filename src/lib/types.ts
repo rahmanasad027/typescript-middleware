@@ -1,5 +1,7 @@
 // import { ResourceLimits } from "worker_threads";
 
+import { ResourceLimits } from "worker_threads";
+
 // export type RidersData = {
 //   count: number;
 //   next: string;
@@ -14,6 +16,7 @@ export const config = {
     Authorization: "token 6915953acf827475ce611bf14fd9820f51fbd454",
   },
 };
+
 export type RidersData = {
   id: number;
   name: string;
@@ -33,4 +36,12 @@ type LastAlert = {
 
 // export type Request = {
 //   ALL_RIDERS: string;
+// };
+
+// export type RidersData = {
+//   count: number;
+//   next: string;
+//   previous: null;
+//   perPage: number;
+//   results: Results;
 // };

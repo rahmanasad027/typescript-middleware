@@ -1,7 +1,7 @@
 import axios from "axios";
-import { camelCase } from "change-case";
-import { snakeCase } from "snake-case";
-import * as queryString from "query-string";
+// import { camelCase } from "change-case";
+// import { snakeCase } from "snake-case";
+// import * as queryString from "query-string";
 interface Params {
   method: string;
   url: string;
@@ -27,14 +27,14 @@ Params) {
     // ],
     // paramsSerializer: (queryParams) =>
     //   queryString.stringify(snakeCase(queryParams)),
-    transformRequest: [
-      (reqData) => {
-        const req = JSON.stringify(reqData);
-        const req1 = snakeCase(req);
-        return req1;
-      },
-    ],
-    transformResponse: [(respData) => camelCase(respData)],
+    // transformRequest: [
+    //   (reqData) => {
+    //     const req = JSON.stringify(reqData);
+    //     const req1 = snakeCase(req);
+    //     return req1;
+    //   },
+    // ],
+    // transformResponse: [(respData) => camelCase(respData)],
     headers: {
       Authorization: "token 6915953acf827475ce611bf14fd9820f51fbd454",
       "Content-Type": "application/json",

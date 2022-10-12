@@ -3,7 +3,7 @@ import * as caseConverter from "change-object-case";
 
 const File = () => {
   const [hel, setHel] = useState({
-    toSeen: "hello",
+    toSeen: "helloTo",
     toSet: "you",
     toNumber: 45,
   });

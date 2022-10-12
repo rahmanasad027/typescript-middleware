@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getLogin } from "../middleware/api";
+import useToken from "../store";
 export interface ILogin {
   Login: {
     email: string;
@@ -10,6 +11,7 @@ export interface ILogin {
 
 const Login = () => {
   const navigate = useNavigate();
+  const { setToken, token } = useToken();
   const [login, setLogin] = useState<ILogin["Login"]>({
     email: "",
     password: "",
@@ -22,20 +24,26 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
-  // const fetchData = async () => {
-  //   try {
-  //     const data = await getLogin(login);
-  //     // console.log(data, "========");
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
+  const fetchData = async () => {
+    try {
+      const data = await getLogin(login);
+      if (data.token) {
+        setToken(data.data.token);
+      }
+
+      console.log(data?.data.token, "========");
+    } catch (e) {
+      console.log(e);
+    }
+  };
   const handleClick = (): void => {
-    // fetchData();
-    navigate("/allRiders");
+    fetchData();
+    if (token) {
+      navigate("/allRiders");
+    }
   };
 
-  console.log(login);
+  // console.log(login);
   return (
     <div>
       <input

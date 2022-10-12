@@ -1,13 +1,13 @@
 import { END_POINTS, REQUEST_TYPE } from "../../lib/constants";
-import { apiCaller } from "../apiCaller";
 import { ILogin as IProps } from "../../components/Login";
+import { apiCaller } from "../apiCaller";
 
-export function getLogin(data: IProps) {
+export function getLogin(data: IProps["Login"]) {
   return apiCaller({
     // <--- added return
     method: REQUEST_TYPE.POST,
     url: END_POINTS.GET_LOGIN,
-    data: data as IProps,
+    data: data as IProps["Login"],
     // isTransformRequestRequired: true,
   });
 }
